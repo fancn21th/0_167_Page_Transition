@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import "./index.css";
 
 const Nav = () => (
-  <nav>
-    <ul className="nav-container">
+  <nav className="nav-container">
+    <ul>
       <li>
         <Link to="/">Home</Link>
       </li>
