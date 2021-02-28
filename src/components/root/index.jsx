@@ -1,35 +1,23 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import { Foo, Bar, Home } from "../../pages";
+import Nav from "../nav";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { routerConfig } from "config";
 
 const Root = () => {
   return (
     <Router>
       <>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/foo">Foo</Link>
-            </li>
-            <li>
-              <Link to="/bar">Bar</Link>
-            </li>
-          </ul>
-        </nav>
+        <Nav />
         <main>
           <Switch>
-            <Route path="/foo">
-              <Foo />
-            </Route>
-            <Route path="/bar">
-              <Bar />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
+            {routerConfig.map(({ path, component }) => {
+              const Comp = component;
+              return (
+                <Route key={path} path={path}>
+                  <Comp />
+                </Route>
+              );
+            })}
           </Switch>
         </main>
       </>
