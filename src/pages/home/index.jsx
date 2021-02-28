@@ -1,14 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import hoverEffect from "hover-effect";
 import "./index.css";
 
 const Page = () => {
+  const he = useRef(null);
+  const [toggle, setToggle] = useState(false);
+
   useEffect(() => {
-    new hoverEffect({
+    he.current = new hoverEffect({
       parent: document.querySelector(".ticket"),
       intensity1: 0.1,
       intensity2: 0.1,
       angle2: Math.PI / 2,
+      hover: false,
       image1:
         "https://images.unsplash.com/photo-1518824547657-2bb07e2978ba?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9&s=942862481ea16bf420e9014eb479e866",
       image2:
@@ -18,8 +22,14 @@ const Page = () => {
     });
   }, []);
 
+  const onClick = () => {
+    if (!toggle) he.current.next();
+    else he.current.previous();
+    setToggle(!toggle);
+  };
+
   return (
-    <div className="ticket">
+    <div className="ticket" onClick={onClick}>
       <div className="overlay"></div>
       <div className="flight-info">
         <h3>JUNE 30 2018 12:30PM</h3>
