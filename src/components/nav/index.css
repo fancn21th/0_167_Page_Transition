@@ -1,10 +1,18 @@
 .nav-container {
+  position: absolute;
+  z-index: 999;
   width: 100%;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+}
+
+.nav-container a {
+  color: white;
 }
 
 .nav-container li {
   display: inline-block;
   margin-right: 50px;
-  border: 5px solid #efefef;
   padding: 0 10px;
 }

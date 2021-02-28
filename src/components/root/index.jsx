@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "../nav";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { routerConfig } from "config";
+import "./index.css";
 
 const Root = () => {
   return (

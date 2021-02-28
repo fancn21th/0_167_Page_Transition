@@ -1,7 +1,8 @@
 import React from "react";
+import "./index.css";
 
 const Page = () => {
-  return <h1>BAR</h1>;
+  return <div className="bar">BAR</div>;
 };
 
 export default Page;
