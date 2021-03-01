@@ -35,7 +35,10 @@ const Page = () => {
         <h3>JUNE 30 2018 12:30PM</h3>
         <div className="flight-locations">
           <h1>LAX</h1>
-          <img src="https://cdn-images-1.medium.com/max/800/1*QFU_XYAKOGJ9nunfqvem1w.png" />
+          <img
+            alt="flight"
+            src="https://cdn-images-1.medium.com/max/800/1*QFU_XYAKOGJ9nunfqvem1w.png"
+          />
           <h1>JFK</h1>
         </div>
       </div>
