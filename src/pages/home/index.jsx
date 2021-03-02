@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import hoverEffect from "hover-effect";
+import Grid from "./layout";
 import "./index.css";
 
 const Page = () => {
@@ -29,20 +30,23 @@ const Page = () => {
   };
 
   return (
-    <div className="ticket" onClick={onClick}>
-      <div className="overlay"></div>
-      <div className="flight-info">
-        <h3>JUNE 30 2018 12:30PM</h3>
-        <div className="flight-locations">
-          <h1>LAX</h1>
-          <img
-            alt="flight"
-            src="https://cdn-images-1.medium.com/max/800/1*QFU_XYAKOGJ9nunfqvem1w.png"
-          />
-          <h1>JFK</h1>
+    <>
+      <Grid />
+      <div className="ticket" onClick={onClick}>
+        <div className="overlay"></div>
+        <div className="flight-info">
+          <h3>JUNE 30 2018 12:30PM</h3>
+          <div className="flight-locations">
+            <h1>LAX</h1>
+            <img
+              alt="flight"
+              src="https://cdn-images-1.medium.com/max/800/1*QFU_XYAKOGJ9nunfqvem1w.png"
+            />
+            <h1>JFK</h1>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -4,6 +4,10 @@ import "./index.css";
 import Root from "./components/root";
 import reportWebVitals from "./reportWebVitals";
 
+// import react-grid-layout
+import "../node_modules/react-grid-layout/css/styles.css";
+import "../node_modules/react-resizable/css/styles.css";
+
 ReactDOM.render(
   <React.StrictMode>
     <Root />
