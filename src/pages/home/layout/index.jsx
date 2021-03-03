@@ -19,7 +19,7 @@ class Grid extends Component {
         className="layout grid-layout"
         layout={layout}
         cols={24}
-        rowHeight={75}
+        rowHeight={66}
         width={1920}
       >
         <div key="left1">LEFT1</div>
