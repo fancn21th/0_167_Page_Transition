@@ -11,23 +11,27 @@ const ExpanderItem = ({
 }) => {
   const item = useRef();
   const image = useRef();
-  const expanderTimeline = gsap.timeline({
-    paused: true,
-  });
-  const shrinkTimeline = gsap.timeline({
-    paused: true,
-  });
+  const expanderTimeline = useRef(
+    gsap.timeline({
+      paused: true,
+    })
+  );
+  const shrinkTimeline = useRef(
+    gsap.timeline({
+      paused: true,
+    })
+  );
 
   useEffect(() => {
     if (close) {
-      shrinkTimeline.play();
+      shrinkTimeline.current.play();
     } else {
-      shrinkTimeline.reverse();
+      shrinkTimeline.current.reverse();
     }
   }, [close]);
 
   useEffect(() => {
-    expanderTimeline.to(
+    expanderTimeline.current.to(
       [item.current],
       0.5,
       {
@@ -36,7 +40,7 @@ const ExpanderItem = ({
       },
       "first"
     );
-    expanderTimeline.to(
+    expanderTimeline.current.to(
       [image.current],
       0.5,
       {
@@ -45,7 +49,7 @@ const ExpanderItem = ({
       },
       "first"
     );
-    shrinkTimeline.to([item.current], 0.5, {
+    shrinkTimeline.current.to([item.current], 0.5, {
       width: 0,
       ease: "Power1.out",
     });
@@ -53,12 +57,12 @@ const ExpanderItem = ({
 
   const expand = () => {
     onItemExpand();
-    expanderTimeline.play();
+    expanderTimeline.current.play();
   };
 
   const shrink = () => {
     onItemShrink();
-    expanderTimeline.reverse();
+    expanderTimeline.current.reverse();
   };
 
   return (
