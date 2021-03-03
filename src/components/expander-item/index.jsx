@@ -12,17 +12,19 @@ const ExpanderItem = ({ width = "400px", height = "400px" }) => {
   useEffect(() => {
     tl.to(
       [item.current],
-      1.5,
+      0.5,
       {
         width: 1200,
+        ease: "Power1.out",
       },
       "first"
     );
     tl.to(
       [image.current],
-      1.5,
+      0.5,
       {
         x: 0,
+        ease: "Power1.in",
       },
       "first"
     );
