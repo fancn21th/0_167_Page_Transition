@@ -1,6 +1,5 @@
 .expander-item--left.expander-item {
   background-color: red;
-  border: 3px dashed white;
   overflow: hidden;
 }
 
