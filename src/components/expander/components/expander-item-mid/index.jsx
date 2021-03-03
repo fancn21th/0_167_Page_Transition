@@ -3,14 +3,30 @@ import { gsap } from "gsap";
 import "./index.css";
 
 const ExpanderItem = React.forwardRef(
-  ({ width = "400px", height = "400px" }, ref) => {
+  (
+    { width = "400px", height = "400px", onItemExpand, onItemShrink, close },
+    ref
+  ) => {
     const image = useRef();
-    const tl = gsap.timeline({
+    const expanderTimeline = gsap.timeline({
       paused: true,
     });
+    const shrinkTimeline = gsap.timeline({});
 
     useEffect(() => {
-      tl.to(
+      if (close) {
+        shrinkTimeline.to([ref.current], 0.5, {
+          width: 0,
+        });
+      } else {
+        shrinkTimeline.to([ref.current], 0.5, {
+          width: 400,
+        });
+      }
+    }, [close]);
+
+    useEffect(() => {
+      expanderTimeline.to(
         [ref.current],
         0.5,
         {
@@ -19,7 +35,7 @@ const ExpanderItem = React.forwardRef(
         },
         "first"
       );
-      tl.to(
+      expanderTimeline.to(
         [image.current],
         0.5,
         {
@@ -31,11 +47,13 @@ const ExpanderItem = React.forwardRef(
     }, []);
 
     const expand = () => {
-      tl.play();
+      onItemExpand();
+      expanderTimeline.play();
     };
 
     const shrink = () => {
-      tl.reverse();
+      onItemShrink();
+      expanderTimeline.reverse();
     };
 
     return (
