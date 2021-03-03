@@ -1,15 +1,11 @@
 import React from "react";
 import "./index.css";
-import LEFT from "components/expander-item-left";
-import MID from "components/expander-item-mid";
-import RIGHT from "components/expander-item-right";
+import Expander from "components/expander";
 
 const Page = () => {
   return (
     <div className="home">
-      <LEFT />
-      <MID />
-      <RIGHT />
+      <Expander />
     </div>
   );
 };

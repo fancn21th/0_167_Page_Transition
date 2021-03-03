@@ -10,4 +10,5 @@
   background-image: url("assets/images/marc.jpg");
   background-position: center center;
   background-size: cover;
+  transform: translateX(-400px);
 }
