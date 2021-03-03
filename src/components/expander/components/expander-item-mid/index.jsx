@@ -23,7 +23,7 @@ const ExpanderItem = ({
   );
 
   useEffect(() => {
-    if (close) {
+    if (close.mid) {
       shrinkTimeline.current.play();
     } else {
       shrinkTimeline.current.reverse();

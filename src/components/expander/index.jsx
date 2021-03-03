@@ -1,49 +1,67 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import LEFT from "./components/expander-item-left";
 import MID from "./components/expander-item-mid";
 import RIGHT from "./components/expander-item-right";
 
 const Expander = () => {
-  const [leftClosed, setLeftClosed] = useState(false);
-  const [midClosed, setMidClosed] = useState(false);
-  const [rightClosed, setRightClosed] = useState(false);
-
-  useEffect(() => {});
+  const [close, setClose] = useState({
+    left: false,
+    mid: false,
+    right: false,
+  });
 
   const leftProps = {
     onItemExpand: () => {
-      setMidClosed(true);
-      setRightClosed(true);
+      setClose({
+        left: false,
+        mid: true,
+        right: true,
+      });
     },
     onItemShrink: () => {
-      setMidClosed(false);
-      setRightClosed(false);
+      setClose({
+        left: false,
+        mid: false,
+        right: false,
+      });
     },
-    close: leftClosed,
+    close,
   };
 
   const midProps = {
     onItemExpand: () => {
-      setLeftClosed(true);
-      setRightClosed(true);
+      setClose({
+        left: true,
+        mid: false,
+        right: true,
+      });
     },
     onItemShrink: () => {
-      setLeftClosed(false);
-      setRightClosed(false);
+      setClose({
+        left: false,
+        mid: false,
+        right: false,
+      });
     },
-    close: midClosed,
+    close,
   };
 
   const rightProps = {
     onItemExpand: () => {
-      setLeftClosed(true);
-      setRightClosed(true);
+      setClose({
+        left: true,
+        mid: true,
+        right: false,
+      });
     },
     onItemShrink: () => {
-      setLeftClosed(false);
-      setRightClosed(false);
+      setClose({
+        left: false,
+        mid: false,
+        right: false,
+      });
     },
-    close: rightClosed,
+    close,
   };
 
   return (
