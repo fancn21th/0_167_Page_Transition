@@ -40,7 +40,7 @@ const ExpanderItem = ({ width = "400px", height = "400px" }) => {
 
   return (
     <div
-      className="expander-item"
+      className="expander-item expander-item--right"
       style={{
         width,
         height,

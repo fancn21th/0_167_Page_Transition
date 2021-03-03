@@ -1,0 +1,13 @@
+.expander-item--left.expander-item {
+  background-color: red;
+  border: 3px dashed white;
+  overflow: hidden;
+}
+
+.expander-item--left .expander-item__image-container {
+  width: 1200px;
+  height: 100%;
+  background-image: url("assets/images/marc.jpg");
+  background-position: center center;
+  background-size: cover;
+}

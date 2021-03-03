@@ -1,10 +1,10 @@
-.expander-item {
+.expander-item--mid.expander-item {
   background-color: red;
   border: 3px dashed white;
   overflow: hidden;
 }
 
-.expander-item__image-container {
+.expander-item--mid .expander-item__image-container {
   width: 1200px;
   height: 100%;
   background-image: url("assets/images/kevin.jpg");
