@@ -4685,7 +4685,7 @@ encodeurl@~1.0.2:
 
 encom-globe-react@fancn21th/encom-globe-react:
   version "0.0.3"
-  resolved "https://codeload.github.com/fancn21th/encom-globe-react/tar.gz/ec57a8d0b957e0cea7a6ac2285d0a09843a3c772"
+  resolved "https://codeload.github.com/fancn21th/encom-globe-react/tar.gz/2a92d092ed683f1e6acd6ce11f257e8bc93e35dc"
 
 end-of-stream@^1.0.0, end-of-stream@^1.1.0:
   version "1.4.4"

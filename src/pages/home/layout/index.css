@@ -5,7 +5,7 @@
 
 /* 覆盖  react-grid-layout 样式 */
 .react-grid-item {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(90, 23, 23, 0.5);
   color: white;
   display: flex;
   align-items: center;
