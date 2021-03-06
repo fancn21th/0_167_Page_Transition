@@ -21,7 +21,7 @@ const globeConfig = {
   font: "Inconsolata",
   pinsData: pinLocations,
   tiles: grid.tiles,
-  baseColor: "green",
+  baseColor: "#94e6fa",
   markerColor: "red",
   pinColor: "green",
   satelliteColor: "yellow",
